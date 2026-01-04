@@ -1,0 +1,57 @@
+---
+import BaseLayout from './BaseLayout.astro';
+const { frontmatter } = Astro.props;
+const title = frontmatter.title || 'Jin Hong Kuan';
+---
+
+<BaseLayout title={title}>
+  <article class="markdown-content">
+    <slot />
+  </article>
+</BaseLayout>
+
+<style>
+  .markdown-content {
+    /* Field note specific styles */
+  }
+  
+  .markdown-content :global(strong) {
+    font-weight: 500;
+  }
+
+  .markdown-content :global(em) {
+    font-style: italic;
+  }
+
+  /* Tags and metadata */
+  .markdown-content :global(p:has(em:first-child)) {
+    font-family: var(--font-sans);
+    font-size: 0.9rem;
+    color: #666;
+    margin-bottom: 2rem;
+  }
+
+  /* Evidence sections */
+  .markdown-content :global(p > strong:first-child) {
+    display: block;
+    font-family: var(--font-sans);
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-top: 2rem;
+    margin-bottom: 0.5rem;
+  }
+
+  /* Horizontal rules */
+  .markdown-content :global(hr) {
+    margin: 3rem 0 1.5rem;
+  }
+
+  /* Footer notes */
+  .markdown-content :global(hr + p) {
+    font-family: var(--font-sans);
+    font-size: 0.85rem;
+    font-style: italic;
+    opacity: 0.7;
+  }
+</style>
