@@ -16,9 +16,9 @@ Mainstream economics would call this a market failure or feedback loop. But Bran
 This pattern is everywhere. Growth metrics don't measure success, they define it. Engagement algorithms don't discover preferences, they construct them. The map doesn't describe the territory. In modern economic systems, the map inferentially restructures the territory to match itself.
 
 **Connected thoughts:**
-- [Making It Explicit reading notes](/inquiry/current-reading)
-- [Platform economies as inference engines](/field-notes/rationalistic-arrogance)
-- [Why representationalist economics keeps failing](/threads/inference-agency)
+- [Making It Explicit reading notes](/portfolio-site/inquiry/current-reading)
+- [Platform economies as inference engines](/portfolio-site/field-notes/rationalistic-arrogance)
+- [Why representationalist economics keeps failing](/portfolio-site/threads/inference-agency)
 
 **Theoretical grounding:**
 - Brandom's inferentialism vs representationalism

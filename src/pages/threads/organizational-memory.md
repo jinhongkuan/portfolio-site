@@ -15,7 +15,7 @@ Traditional economics assumes perfect information. Real organizations operate on
 
 ## Field Notes in This Thread
 
-- [How Growth Pressure Creates Technical Debt](/field-notes/growth-pressure-technical-debt) — Deferred decisions become architectural prisons
+- [How Growth Pressure Creates Technical Debt](/portfolio-site/field-notes/growth-pressure-technical-debt) — Deferred decisions become architectural prisons
 - More emerging...
 
 ## Bicameral Connection

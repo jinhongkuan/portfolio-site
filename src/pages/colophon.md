@@ -18,4 +18,4 @@ The goal is not to convince but to make visible. See for yourself.
 
 ---
 
-[Home](/) · [About](/about) · [Contact](/about#contact)
+[Home](/) · [About](/portfolio-site/about) · [Contact](/portfolio-site/about#contact)

@@ -22,10 +22,10 @@ Brandom would recognize this: the metric doesn't represent user behavior, it ent
 - [Bicameral trace DEC-445]: "North star = engagement" → UI dark patterns within 3 months
 
 **Connected thoughts:**
-- [How metrics create reality, not measure it](/field-notes/inference-not-representation)
-- [The commitment structure of KPIs](/threads/techno-economic-constraint)
-- [Metrics as inferential commitments](/field-notes/commitment-negotiation-stack)
-- [How methodologies encode commitments](/field-notes/agile-waterfall-commitment-strategies)
+- [How metrics create reality, not measure it](/portfolio-site/field-notes/inference-not-representation)
+- [The commitment structure of KPIs](/portfolio-site/threads/techno-economic-constraint)
+- [Metrics as inferential commitments](/portfolio-site/field-notes/commitment-negotiation-stack)
+- [How methodologies encode commitments](/portfolio-site/field-notes/agile-waterfall-commitment-strategies)
 
 ---
 *Field note from advising a content platform through metric crisis. The hardest part wasn't changing the metric — it was unwinding all the decisions premised on the old one.*

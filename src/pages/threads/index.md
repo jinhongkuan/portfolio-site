@@ -6,13 +6,13 @@ These collections group observations that seem to point toward deeper, recurring
 
 ## Active Threads
 
-### [Inference & Agency](/threads/inference-agency)
+### [Inference & Agency](/portfolio-site/threads/inference-agency)
 How modern systems shift from representing the world to actively inferring and shaping what becomes possible
 
-### [Techno-Economic Constraint](/threads/techno-economic-constraint)  
+### [Techno-Economic Constraint](/portfolio-site/threads/techno-economic-constraint)  
 The ways technology and economics jointly structure the space of feasible action
 
-### [Organizational Memory](/threads/organizational-memory)
+### [Organizational Memory](/portfolio-site/threads/organizational-memory)
 How decisions propagate through systems and become embedded in infrastructure
 
 ---

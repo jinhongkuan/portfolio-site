@@ -60,4 +60,4 @@ By surfacing the decision history, we changed the constraint space itself.
 
 ---
 
-[Back to Practice](/practice) · [Discuss a diagnostic sprint →](/about#contact)
+[Back to Practice](/portfolio-site/practice) · [Discuss a diagnostic sprint →](/portfolio-site/about#contact)

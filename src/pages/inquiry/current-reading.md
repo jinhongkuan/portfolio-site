@@ -21,7 +21,7 @@ Books informing the ongoing inquiry, with connections to emerging field notes.
 
 **What I'm watching for**: How startup "pivots" embody Brandom's insight — they're not discovering market truth but creating new inferential chains that reshape possibility.
 
-**Related field notes**: [Inference & Agency thread](/threads/inference-agency)
+**Related field notes**: [Inference & Agency thread](/portfolio-site/threads/inference-agency)
 
 ---
 

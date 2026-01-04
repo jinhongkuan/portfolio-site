@@ -18,7 +18,7 @@ Jefferson imagined technology empowering independent producers. Instead, we get 
 - Jefferson's yeoman farmer vision inverted: Instead of technology empowering independent producers, it creates networks of dependency
 
 **Connected thoughts:**
-- [The inseparability of technology and markets](/field-notes/tech-market-fusion)
+- [The inseparability of technology and markets](/portfolio-site/field-notes/tech-market-fusion)
 - [Algorithmic intermediaries as new governance layer](https://medium.com/@lucius-godspark/how-algorithmic-systems-transform-economic-agency-0862f9cd82fd)
 
 ---

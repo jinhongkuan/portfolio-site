@@ -29,9 +29,9 @@ This is why technical debt persists. Not because it's hard to fix, but because f
 - Latour on how artifacts carry politics
 
 **Connected thoughts:**
-- [How commitments cascade through tech stacks](/field-notes/commitment-negotiation-stack)
-- [Methodologies as accountability structures](/field-notes/agile-waterfall-commitment-strategies)
-- [Metrics that dissolve responsibility](/field-notes/metrics-become-territory)
+- [How commitments cascade through tech stacks](/portfolio-site/field-notes/commitment-negotiation-stack)
+- [Methodologies as accountability structures](/portfolio-site/field-notes/agile-waterfall-commitment-strategies)
+- [Metrics that dissolve responsibility](/portfolio-site/field-notes/metrics-become-territory)
 
 ---
 *Armchair note after completing "The Unaccountability Machine." Need fieldwork examples of accountability sinks in actual codebases.*

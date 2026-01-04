@@ -31,10 +31,10 @@ MVP culture systematically violates these inferential commitments. "Just ship it
 - The social articulation of reasoning
 
 **Connected thoughts**:
-- [How metrics redefine rather than measure](/field-notes/metrics-become-territory)
-- [Architecture as frozen accountability](/field-notes/accountability-dissolves-upstream)
-- [Agile vs Waterfall as commitment strategies](/field-notes/agile-waterfall-commitment-strategies)
-- [The participatory nature of technical reality](/threads/techno-economic-constraint)
+- [How metrics redefine rather than measure](/portfolio-site/field-notes/metrics-become-territory)
+- [Architecture as frozen accountability](/portfolio-site/field-notes/accountability-dissolves-upstream)
+- [Agile vs Waterfall as commitment strategies](/portfolio-site/field-notes/agile-waterfall-commitment-strategies)
+- [The participatory nature of technical reality](/portfolio-site/threads/techno-economic-constraint)
 
 ---
 *Armchair note after reading Brandom ch. 3 on linguistic practice. The framework completely reframes what happens in technical organizations—from resource management to commitment negotiation.*

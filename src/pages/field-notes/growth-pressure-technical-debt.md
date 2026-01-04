@@ -18,9 +18,9 @@ The real cost wasn't the retrofit. It was three months of building in the dark, 
 - Pattern: "Simple" MVP decisions average 2.3x implementation cost in retrofits
 
 **Connected thoughts:**
-- [When "Move Fast" Moves Backwards](/field-notes/velocity-trap)
-- [The Myth of the Technical Solution](/field-notes/technical-solution-myth)
-- [Inference chains in organizational memory](/threads/organizational-memory)
+- [When "Move Fast" Moves Backwards](/portfolio-site/field-notes/velocity-trap)
+- [The Myth of the Technical Solution](/portfolio-site/field-notes/technical-solution-myth)
+- [Inference chains in organizational memory](/portfolio-site/threads/organizational-memory)
 
 ---
 *Field note from upstream consulting work. Bicameral instrumentation reveals how growth imperatives shape technical architecture through chains of deferred commitments.*

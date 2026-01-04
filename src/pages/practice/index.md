@@ -40,10 +40,10 @@ My experience spans CTO and senior engineering roles in regulated and high-stake
 
 ---
 
-## [See a Diagnostic Sprint in Action](/practice/diagnostic-sprint)
+## [See a Diagnostic Sprint in Action](/portfolio-site/practice/diagnostic-sprint)
 
 Real example: How a "rebuild our notifications" request became a study in organizational commitment patterns — and saved 6 months of engineering effort.
 
 ---
 
-[Discuss a diagnostic sprint →](/about#contact)
+[Discuss a diagnostic sprint →](/portfolio-site/about#contact)

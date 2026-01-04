@@ -14,7 +14,7 @@ When your recommendation engine suggests products, it's not uncovering what user
 
 ## Field Notes in This Thread
 
-- [When Consumer Choice Constrains Economic Freedom](/field-notes/rationalistic-arrogance) — Platform intermediaries as inference engines
+- [When Consumer Choice Constrains Economic Freedom](/portfolio-site/field-notes/rationalistic-arrogance) — Platform intermediaries as inference engines
 - [How Algorithmic Systems Transform Economic Agency](https://medium.com/@lucius-godspark/how-algorithmic-systems-transform-economic-agency-0862f9cd82fd) — External exploration
 
 ## Bicameral Connection

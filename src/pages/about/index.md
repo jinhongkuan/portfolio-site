@@ -24,7 +24,7 @@ I work at the intersection of inquiry and practice:
 
 ## Current Projects
 
-**[Bicameral Pico](/about/bicameral-pico)**: An open instrumentation layer that makes organizational decision dynamics observable, replayable, and learnable. It functions as a field instrument for ethnographic observation — capturing how decisions propagate through organizations and become embedded in technical systems.
+**[Bicameral Pico](/portfolio-site/about/bicameral-pico)**: An open instrumentation layer that makes organizational decision dynamics observable, replayable, and learnable. It functions as a field instrument for ethnographic observation — capturing how decisions propagate through organizations and become embedded in technical systems.
 
 ---
 
@@ -33,4 +33,4 @@ I work at the intersection of inquiry and practice:
 Email: [your-email@example.com]  
 Substack: [Field Notes on Techno-Economic Systems](https://your-substack.substack.com)  
 
-For upstream consulting inquiries, see [Practice](/practice).
+For upstream consulting inquiries, see [Practice](/portfolio-site/practice).

@@ -17,8 +17,8 @@ Standard economics treats technology as an exogenous constraint on optimization.
 
 ## Field Notes in This Thread
 
-- [When Consumer Choice Constrains Economic Freedom](/field-notes/rationalistic-arrogance) — Platform architecture as economic destiny
-- [Inference Replaces Representation](/field-notes/inference-not-representation) — How models create what they measure
+- [When Consumer Choice Constrains Economic Freedom](/portfolio-site/field-notes/rationalistic-arrogance) — Platform architecture as economic destiny
+- [Inference Replaces Representation](/portfolio-site/field-notes/inference-not-representation) — How models create what they measure
 - More emerging...
 
 ## The Pattern

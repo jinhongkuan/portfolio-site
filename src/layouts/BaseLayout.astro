@@ -23,12 +23,12 @@ const currentPath = Astro.url.pathname;
 <body>
   <div class="container">
     <nav class="navigation">
-      <a href="/" class={currentPath === '/' ? 'active' : ''}>Home</a>
-      <a href="/about" class={currentPath.startsWith('/about') ? 'active' : ''}>About</a>
-      <a href="/inquiry" class={currentPath.startsWith('/inquiry') ? 'active' : ''}>Inquiry</a>
-      <a href="/field-notes" class={currentPath.startsWith('/field-notes') ? 'active' : ''}>Field Notes</a>
-      <a href="/threads" class={currentPath.startsWith('/threads') ? 'active' : ''}>Threads</a>
-      <a href="/practice" class={currentPath.startsWith('/practice') ? 'active' : ''}>Practice</a>
+      <a href="/portfolio-site/" class={currentPath === '/portfolio-site/' ? 'active' : ''}>Home</a>
+      <a href="/portfolio-site/about" class={currentPath.startsWith('/portfolio-site/about') ? 'active' : ''}>About</a>
+      <a href="/portfolio-site/inquiry" class={currentPath.startsWith('/portfolio-site/inquiry') ? 'active' : ''}>Inquiry</a>
+      <a href="/portfolio-site/field-notes" class={currentPath.startsWith('/portfolio-site/field-notes') ? 'active' : ''}>Field Notes</a>
+      <a href="/portfolio-site/threads" class={currentPath.startsWith('/portfolio-site/threads') ? 'active' : ''}>Threads</a>
+      <a href="/portfolio-site/practice" class={currentPath.startsWith('/portfolio-site/practice') ? 'active' : ''}>Practice</a>
     </nav>
     
     <main>
@@ -37,7 +37,7 @@ const currentPath = Astro.url.pathname;
     
     <footer>
       <hr />
-      <p><a href="/colophon">Colophon</a> · <a href="/about#contact">Contact</a></p>
+      <p><a href="/portfolio-site/colophon">Colophon</a> · <a href="/portfolio-site/about#contact">Contact</a></p>
     </footer>
   </div>
 </body>

@@ -23,7 +23,7 @@ Ask what makes action possible. Consider what remains when models fail. Wonder w
 
 ---
 
-## [Current Reading](/inquiry/current-reading)
+## [Current Reading](/portfolio-site/inquiry/current-reading)
 
 Books and theoretical works informing the fieldwork, selected based on patterns emerging from observation rather than abstract interest.
 

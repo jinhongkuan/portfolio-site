@@ -18,9 +18,9 @@ Both are rational responses to their contexts. Waterfall assumes commitments can
 The real pathology isn't using the "wrong" methodology—it's mismatching commitment strategy to commitment environment. Trying to be Agile with fixed regulatory requirements, or Waterfall in a startup finding product-market fit.
 
 **Connected thoughts**:
-- [Standups as deontic scorekeeping](/field-notes/commitment-negotiation-stack)
-- [When metrics become commitments](/field-notes/metrics-become-territory)
-- [Accountability patterns in architecture](/field-notes/accountability-dissolves-upstream)
+- [Standups as deontic scorekeeping](/portfolio-site/field-notes/commitment-negotiation-stack)
+- [When metrics become commitments](/portfolio-site/field-notes/metrics-become-territory)
+- [Accountability patterns in architecture](/portfolio-site/field-notes/accountability-dissolves-upstream)
 
 ---
 *Note: Royce actually warned against pure sequential waterfall, advocating iteration. The rigid "waterfall" is a misreading of his work—itself a fascinating case of how methodologies become commitments that outlive their rationale.*
