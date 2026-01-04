@@ -1,14 +1,21 @@
 ---
 import BaseLayout from './BaseLayout.astro';
+import SidebarLayout from './SidebarLayout.astro';
+
 const { frontmatter } = Astro.props;
 const title = frontmatter.title || 'Jin Hong Kuan';
+const { relatedNotes = [], relatedThreads = [] } = frontmatter;
+
+// Use SidebarLayout if there are related items, otherwise use BaseLayout
+const hasRelated = relatedNotes.length > 0 || relatedThreads.length > 0;
+const Layout = hasRelated ? SidebarLayout : BaseLayout;
 ---
 
-<BaseLayout title={title}>
+<Layout title={title} relatedNotes={relatedNotes} relatedThreads={relatedThreads}>
   <article class="markdown-content">
     <slot />
   </article>
-</BaseLayout>
+</Layout>
 
 <style>
   .markdown-content {

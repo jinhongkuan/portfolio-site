@@ -1,0 +1,88 @@
+---
+export interface Props {
+  notes?: Array<{title: string, url: string}>;
+  threads?: Array<{title: string, url: string}>;
+}
+
+const { notes = [], threads = [] } = Astro.props;
+---
+
+<nav class="related-content">
+  {notes.length > 0 && (
+    <section class="related-section">
+      <h3>Related Notes</h3>
+      <ul>
+        {notes.map(note => (
+          <li>
+            <a href={note.url}>{note.title}</a>
+          </li>
+        ))}
+      </ul>
+    </section>
+  )}
+  
+  {threads.length > 0 && (
+    <section class="related-section">
+      <h3>Related Threads</h3>
+      <ul>
+        {threads.map(thread => (
+          <li>
+            <a href={thread.url}>{thread.title}</a>
+          </li>
+        ))}
+      </ul>
+    </section>
+  )}
+  
+  <section class="related-section">
+    <h3>Navigation</h3>
+    <ul>
+      <li><a href="/portfolio-site/field-notes">← All Field Notes</a></li>
+      <li><a href="/portfolio-site/threads">← All Threads</a></li>
+    </ul>
+  </section>
+</nav>
+
+<style>
+  .related-content {
+    font-family: var(--font-sans);
+    font-size: 0.9rem;
+  }
+
+  .related-section {
+    margin-bottom: 2.5rem;
+  }
+
+  .related-section h3 {
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin: 0 0 1rem 0;
+    opacity: 0.6;
+    font-weight: 500;
+  }
+
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  li {
+    margin-bottom: 0.75rem;
+  }
+
+  a {
+    color: var(--color-text);
+    text-decoration: none;
+    opacity: 0.7;
+    transition: opacity var(--transition-fast);
+    display: block;
+    padding: 0.25rem 0;
+  }
+
+  a:hover {
+    opacity: 1;
+    color: var(--color-accent);
+  }
+</style>

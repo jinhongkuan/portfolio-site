@@ -1,5 +1,7 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import SectionHeader from '../../components/typography/SectionHeader.astro';
+import NoteCard from '../../components/content/NoteCard.astro';
 
 // Get all field notes
 const allNotes = await Astro.glob('./*.md');
@@ -35,10 +37,7 @@ const armchairNotes = fieldNotes.filter(note => {
 
   <div class="notes-container">
     <section class="notes-section">
-      <div class="section-header">
-        <h2>From the Field 🔬</h2>
-        <span class="section-count">{fieldworkNotes.length} notes</span>
-      </div>
+      <SectionHeader title="From the Field 🔬" count={`${fieldworkNotes.length} notes`} />
       <p class="section-description">
         Empirical observations from startup consulting and technical fieldwork. 
         Where theory meets the messy reality of actual systems.
@@ -61,21 +60,19 @@ const armchairNotes = fieldNotes.filter(note => {
           ) || '';
           
           return (
-            <a href={url} class="note-card">
-              <h3>{title}</h3>
-              <p class="note-preview">{preview.substring(0, 150)}...</p>
-              <span class="note-link">Read more →</span>
-            </a>
+            <NoteCard 
+              title={title}
+              url={url}
+              preview={preview.substring(0, 150) + '...'}
+              type="fieldwork"
+            />
           );
         })}
       </div>
     </section>
 
     <section class="notes-section">
-      <div class="section-header">
-        <h2>From the Armchair 🪑</h2>
-        <span class="section-count">{armchairNotes.length} notes</span>
-      </div>
+      <SectionHeader title="From the Armchair 🪑" count={`${armchairNotes.length} notes`} />
       <p class="section-description">
         Theoretical reflections connecting fieldwork to broader patterns. 
         Where philosophy meets practice.
@@ -98,11 +95,12 @@ const armchairNotes = fieldNotes.filter(note => {
           ) || '';
           
           return (
-            <a href={url} class="note-card">
-              <h3>{title}</h3>
-              <p class="note-preview">{preview.substring(0, 150)}...</p>
-              <span class="note-link">Read more →</span>
-            </a>
+            <NoteCard 
+              title={title}
+              url={url}
+              preview={preview.substring(0, 150) + '...'}
+              type="armchair"
+            />
           );
         })}
       </div>
@@ -144,25 +142,6 @@ const armchairNotes = fieldNotes.filter(note => {
     margin-bottom: 5rem;
   }
 
-  .section-header {
-    display: flex;
-    align-items: baseline;
-    justify-content: space-between;
-    margin-bottom: 1rem;
-    border-bottom: 2px solid var(--color-border);
-    padding-bottom: 0.5rem;
-  }
-
-  .section-header h2 {
-    margin: 0;
-    font-size: 1.8rem;
-  }
-
-  .section-count {
-    font-family: var(--font-sans);
-    font-size: 0.9rem;
-    opacity: 0.6;
-  }
 
   .section-description {
     font-style: italic;
@@ -176,45 +155,6 @@ const armchairNotes = fieldNotes.filter(note => {
     gap: 2rem;
   }
 
-  .note-card {
-    display: flex;
-    flex-direction: column;
-    padding: 1.5rem;
-    background: #F5F4F0;
-    border-radius: 4px;
-    text-decoration: none;
-    color: inherit;
-    transition: all 0.2s ease;
-    border: 1px solid transparent;
-  }
-
-  .note-card:hover {
-    background: #EFEDE8;
-    border-color: var(--color-accent);
-    transform: translateY(-2px);
-  }
-
-  .note-card h3 {
-    margin: 0 0 1rem 0;
-    font-size: 1.3rem;
-    font-weight: 500;
-    line-height: 1.3;
-  }
-
-  .note-preview {
-    flex: 1;
-    font-size: 0.95rem;
-    line-height: 1.6;
-    opacity: 0.75;
-    margin-bottom: 1rem;
-  }
-
-  .note-link {
-    font-family: var(--font-sans);
-    font-size: 0.85rem;
-    color: var(--color-accent);
-    font-weight: 500;
-  }
 
   .notes-footer {
     text-align: center;

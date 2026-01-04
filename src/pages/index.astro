@@ -1,358 +1,121 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-import { getCollection } from 'astro:content';
-
-// Get recent field notes
-const allFieldNotes = await Astro.glob('./field-notes/*.md');
-const recentFieldNotes = allFieldNotes
-  .filter(note => note.file.includes('.md') && !note.file.includes('index.md'))
-  .sort((a, b) => {
-    const dateA = a.frontmatter?.date || '2024-01-01';
-    const dateB = b.frontmatter?.date || '2024-01-01';
-    return dateB.localeCompare(dateA);
-  })
-  .slice(0, 6);
 ---
 
 <BaseLayout>
-  <div class="hero">
-    <h1 class="hero-title">JIN HONG KUAN</h1>
+  <div class="homepage">
+    <h1 class="site-title">JIN HONG KUAN</h1>
     
-    <div class="hero-question">
-      <h2>Does Technology Still Create Freer Societies?</h2>
-      <p class="hero-intro">
-        This question haunts me as I navigate New York's tech scene, drawn here by Jefferson's vision of technology empowering independent producers. Yet what I witness daily is its inversion: platforms that promise freedom while engineering dependency.
-      </p>
-    </div>
-  </div>
-
-  <section class="pragmatist-project">
-    <div class="section-header">
-      <h3>The Pragmatist Project</h3>
-      <div class="section-line"></div>
-    </div>
-    
-    <div class="two-column">
-      <div class="column">
-        <p>
-          Traditional economics thinks <em>representationally</em> — models describe reality, metrics measure behavior, algorithms optimize outcomes. This view has led to modernity's characteristic ills: the tyranny of metrics (Muller), the unaccountability machine (Davies), the black swan blindness (Taleb). Now ML threatens to amplify these tendencies, optimizing away the very spaces where economic freedom exists.
-        </p>
-      </div>
-      
-      <div class="column">
-        <p>
-          There's another way. The American pragmatist tradition — from Peirce and James through Dewey and Brandom — offers an <em>inferentialist</em> alternative. Rather than representing reality, our economic models and technical systems create inferential commitments that reshape possibility. As Brandom argues in "Making It Explicit," rationality emerges not from private utility calculations but from social practices of giving and asking for reasons.
-        </p>
-      </div>
-    </div>
-
-    <div class="uber-example">
-      <p>
-        Consider Uber's "be your own boss" rhetoric. This isn't describing driving-for-hire but redefining it through what I call "inferential monopoly." The platform doesn't just match riders with drivers — it monopolizes the normative vocabulary through which drivers express economic agency. Drivers cannot negotiate prices, communicate collectively, or make direct claims about service quality. Every meaningful economic decision remains with the platform. Meanwhile, taxi drivers who never chose this system find their feasibility space transformed by venture-capital-subsidized prices they cannot match. The individual "choice" to trade autonomy for platform access creates an autonomy cascade, forcing the same trade-off on everyone.
-      </p>
-    </div>
-
-    <blockquote class="key-insight">
-      When we apply inferentialist thinking to technology, we see it's fundamentally about controlling meaning-making. Credit scores exemplify this — they define "creditworthiness" through opaque algorithms while preventing any participation in that definition. As Schrepel and Pentland (2024) show, platforms engineer feasibility spaces that "preserve technical choice while systematically eliminating meaningful exit."
+    <blockquote class="jefferson-quote">
+      <p>"I hope our wisdom will grow with our power, and teach us that the less we use our power, the greater it will be."</p>
+      <cite>— Thomas Jefferson</cite>
     </blockquote>
-  </section>
-
-  <section class="my-work">
-    <div class="section-header">
-      <h3>My Work</h3>
-      <div class="section-line"></div>
+    
+    <div class="central-question">
+      <a href="/portfolio-site/about" class="question-link">
+        Does technology still create freer societies?
+      </a>
     </div>
     
-    <div class="work-grid">
-      <div class="work-item">
-        <h4>Field Notes</h4>
-        <p>Explores how feature commitments actually work between product and engineering, revealing how this shapes the tech products developed in our markets.</p>
-        <a href="/portfolio-site/field-notes" class="work-link">Browse Field Notes →</a>
-      </div>
-      
-      <div class="work-item">
-        <h4>Threads</h4>
-        <p>Examines how business commitments are made — for good or ill. Speculative writing on the patterns that emerge from fieldwork.</p>
-        <a href="/portfolio-site/threads" class="work-link">Explore Threads →</a>
-      </div>
-      
-      <div class="work-item">
-        <h4>Broader Horizons</h4>
-        <p>On Pragmatism as Incarnational Economics — the philosophical foundations that ground the technical work.</p>
-        <a href="https://substack.com" class="work-link">Substack Essays →</a>
-      </div>
-    </div>
-
-    <p class="work-aim">
-      I experiment with the inferentialist approach at a micro-scale. We all know code commits — but we can similarly track feature commits (between product and engineering) and business commits (between business and users). My aim: accountable technological development that aligns commitments across all levels, restoring conditions where technology enables rather than constrains human agency.
-    </p>
-  </section>
-
-  <section class="recent-observations">
-    <div class="section-header">
-      <h3>Recent Observations</h3>
-      <div class="section-line"></div>
-    </div>
-    
-    <div class="observations-grid">
-      <div class="observation-category">
-        <h4>From the Field 🔬</h4>
-        <div class="observation-list">
-          <a href="/portfolio-site/field-notes/metrics-become-territory">
-            <span class="observation-title">When Metrics Become the Territory</span>
-            <span class="observation-desc">An engagement metric reshapes an entire platform</span>
-          </a>
-          <a href="/portfolio-site/field-notes/accountability-dissolves-upstream">
-            <span class="observation-title">Where Accountability Dissolves in the Stack</span>
-            <span class="observation-desc">Technical architecture as frozen decision-making</span>
-          </a>
-          <a href="/portfolio-site/field-notes/commitment-negotiation-stack">
-            <span class="observation-title">When Standups Become Scorekeeping</span>
-            <span class="observation-desc">Reframing tech teams through Brandom</span>
-          </a>
-        </div>
-      </div>
-      
-      <div class="observation-category">
-        <h4>From the Armchair 🪑</h4>
-        <div class="observation-list">
-          <a href="/portfolio-site/field-notes/agile-waterfall-commitment-strategies">
-            <span class="observation-title">Agile vs Waterfall: Two Commitment Strategies</span>
-            <span class="observation-desc">Different responses to different commitment environments</span>
-          </a>
-          <a href="/portfolio-site/field-notes/inference-not-representation">
-            <span class="observation-title">Inference Replaces Representation</span>
-            <span class="observation-desc">How models create reality rather than describe it</span>
-          </a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <div class="closing-quote">
-    <p>"What is determined is not how one will act but how one ought to, given the sense or content grasped, or the rule one has endorsed."</p>
-    <p class="quote-attribution">— Robert Brandom</p>
+    <nav class="home-nav">
+      <a href="/portfolio-site/field-notes">Field Notes</a>
+      <span class="separator">·</span>
+      <a href="/portfolio-site/threads">Threads</a>
+      <span class="separator">·</span>
+      <a href="/portfolio-site/inquiry">Current Reading</a>
+    </nav>
   </div>
 </BaseLayout>
 
 <style>
-  /* Hero Section */
-  .hero {
+  .homepage {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: calc(100vh - 12rem);
+    text-align: center;
+    max-width: 720px;
+    margin: 0 auto;
+  }
+
+  .site-title {
+    font-size: 3.5rem;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    margin-bottom: 4rem;
+    line-height: 1;
+  }
+
+  .jefferson-quote {
+    margin: 0 0 4rem 0;
+    font-size: 1.3rem;
+    line-height: 1.8;
+    max-width: 600px;
+  }
+
+  .jefferson-quote p {
+    margin-bottom: 1rem;
+    font-style: italic;
+  }
+
+  .jefferson-quote cite {
+    font-style: normal;
+    font-family: var(--font-sans);
+    font-size: 0.9rem;
+    opacity: 0.7;
+  }
+
+  .central-question {
     margin-bottom: 4rem;
   }
 
-  .hero-title {
-    font-size: 3.5rem;
-    font-weight: 500;
-    letter-spacing: 0.02em;
-    margin-bottom: 3rem;
-    text-align: center;
-  }
-
-  .hero-question h2 {
-    font-size: 2.2rem;
+  .question-link {
+    font-size: 2rem;
     font-style: italic;
-    font-weight: 400;
-    margin: 0 0 1.5rem 0;
-    color: var(--color-accent);
-  }
-
-  .hero-intro {
-    font-size: 1.2rem;
-    line-height: 1.7;
-    max-width: 85%;
-  }
-
-  /* Section Headers */
-  .section-header {
-    display: flex;
-    align-items: center;
-    margin-bottom: 2rem;
-    margin-top: 4rem;
-  }
-
-  .section-header h3 {
-    margin: 0;
-    margin-right: 1.5rem;
-    font-size: 1.2rem;
-    text-transform: uppercase;
-    letter-spacing: 0.1em;
-    font-family: var(--font-sans);
-    font-weight: 500;
-  }
-
-  .section-line {
-    flex: 1;
-    height: 1px;
-    background: var(--color-border);
-  }
-
-  /* Two Column Layout */
-  .two-column {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 2.5rem;
-    margin-bottom: 2rem;
-  }
-
-  .column p {
-    margin-bottom: 0;
-  }
-
-  /* Uber Example */
-  .uber-example {
-    background: #F5F4F0;
-    padding: 2rem;
-    border-radius: 4px;
-    margin: 2rem 0;
-  }
-
-  .uber-example p {
-    margin-bottom: 0;
-    font-size: 1.05rem;
-  }
-
-  /* Key Insight */
-  .key-insight {
-    font-size: 1.15rem;
-    line-height: 1.8;
-    border-left: 4px solid var(--color-accent);
-    padding-left: 2rem;
-    margin: 3rem 0;
-    font-style: normal;
-  }
-
-  /* Work Grid */
-  .work-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 2rem;
-    margin-bottom: 2rem;
-  }
-
-  .work-item h4 {
-    font-family: var(--font-sans);
-    font-size: 1rem;
-    font-weight: 500;
-    margin: 0 0 0.5rem 0;
-  }
-
-  .work-item p {
-    font-size: 0.95rem;
-    line-height: 1.6;
-    margin-bottom: 1rem;
-    opacity: 0.85;
-  }
-
-  .work-link {
-    font-family: var(--font-sans);
-    font-size: 0.9rem;
     color: var(--color-accent);
     text-decoration: none;
-    border-bottom: 1px solid var(--color-accent);
+    border-bottom: 2px solid transparent;
+    transition: all 0.3s ease;
+    display: inline-block;
   }
 
-  .work-aim {
-    font-style: italic;
-    margin-top: 2rem;
-    padding-top: 2rem;
-    border-top: 1px solid var(--color-border);
+  .question-link:hover {
+    border-bottom-color: var(--color-accent);
   }
 
-  /* Observations Grid */
-  .observations-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 3rem;
-  }
-
-  .observation-category h4 {
+  .home-nav {
     font-family: var(--font-sans);
     font-size: 1rem;
-    margin: 0 0 1.5rem 0;
-    font-weight: 500;
   }
 
-  .observation-list {
-    display: flex;
-    flex-direction: column;
-    gap: 1.5rem;
-  }
-
-  .observation-list a {
-    display: flex;
-    flex-direction: column;
-    text-decoration: none;
-    color: inherit;
-    border-bottom: none;
-    padding-bottom: 1.5rem;
-    border-bottom: 1px solid var(--color-border);
-  }
-
-  .observation-list a:last-child {
-    border-bottom: none;
-  }
-
-  .observation-title {
-    font-weight: 500;
+  .home-nav a {
     color: var(--color-text);
-    margin-bottom: 0.25rem;
-    font-size: 1.05rem;
-  }
-
-  .observation-desc {
-    font-family: var(--font-sans);
-    font-size: 0.85rem;
+    text-decoration: none;
     opacity: 0.7;
+    transition: opacity 0.2s ease;
+    margin: 0 1rem;
   }
 
-  .observation-list a:hover .observation-title {
-    color: var(--color-accent);
+  .home-nav a:hover {
+    opacity: 1;
   }
 
-  /* Closing Quote */
-  .closing-quote {
-    margin-top: 5rem;
-    padding: 3rem 0;
-    text-align: center;
-    border-top: 1px solid var(--color-border);
+  .separator {
+    opacity: 0.3;
   }
 
-  .closing-quote p {
-    font-style: italic;
-    font-size: 1.1rem;
-    margin-bottom: 0.5rem;
-  }
-
-  .quote-attribution {
-    font-style: normal !important;
-    font-family: var(--font-sans);
-    font-size: 0.9rem !important;
-    opacity: 0.7;
-  }
-
-  /* Responsive */
   @media (max-width: 768px) {
-    .hero-title {
+    .site-title {
       font-size: 2.5rem;
     }
 
-    .hero-question h2 {
-      font-size: 1.8rem;
+    .question-link {
+      font-size: 1.5rem;
     }
 
-    .two-column {
-      grid-template-columns: 1fr;
-      gap: 1.5rem;
-    }
-
-    .work-grid {
-      grid-template-columns: 1fr;
-    }
-
-    .observations-grid {
-      grid-template-columns: 1fr;
-      gap: 2rem;
+    .jefferson-quote {
+      font-size: 1.1rem;
     }
   }
 </style>

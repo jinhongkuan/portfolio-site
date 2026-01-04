@@ -1,3 +1,17 @@
+---
+title: When Standups Become Scorekeeping
+relatedNotes:
+  - title: When Metrics Become the Territory
+    url: /portfolio-site/field-notes/metrics-become-territory
+  - title: Where Accountability Dissolves in the Stack
+    url: /portfolio-site/field-notes/accountability-dissolves-upstream
+  - title: Agile vs Waterfall as Commitment Strategies
+    url: /portfolio-site/field-notes/agile-waterfall-commitment-strategies
+relatedThreads:
+  - title: The participatory nature of technical reality
+    url: /portfolio-site/threads/techno-economic-constraint
+---
+
 # When Standups Become Scorekeeping: Reframing Tech Teams Through Brandom
 
 *2026-01-04* · Tags: `organizational` `technological` `philosophical` · 🪑 armchair
