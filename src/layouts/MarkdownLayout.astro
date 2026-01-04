@@ -12,7 +12,15 @@ const title = frontmatter.title || 'Jin Hong Kuan';
 
 <style>
   .markdown-content {
-    /* Field note specific styles */
+    max-width: 720px;
+    margin: 0 auto;
+  }
+  
+  /* First H1 gets special treatment */
+  .markdown-content :global(h1:first-of-type) {
+    font-size: 2.5rem;
+    line-height: 1.2;
+    margin-bottom: 3rem;
   }
   
   .markdown-content :global(strong) {
