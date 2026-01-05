@@ -1,3 +1,7 @@
+---
+layout: ../../layouts/MarkdownLayout.astro
+---
+
 # When Metrics Become the Territory
 
 *2025-01-05* · Tags: `economic` `technological` · 🔬 fieldwork

@@ -1,12 +1,13 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import PageTransition from '../../components/layout/PageTransition.svelte';
 import SectionHeader from '../../components/typography/SectionHeader.astro';
 import NoteCard from '../../components/content/NoteCard.astro';
 
 // Get all field notes
 const allNotes = await Astro.glob('./*.md');
 const fieldNotes = allNotes
-  .filter(note => !note.file.includes('index.md'))
+  .filter(note => note.file && !note.file.includes('index.md'))
   .sort((a, b) => {
     // Extract date from content or frontmatter
     const dateA = a.frontmatter?.date || '2024-01-01';
@@ -16,18 +17,27 @@ const fieldNotes = allNotes
 
 // Separate fieldwork and armchair notes
 const fieldworkNotes = fieldNotes.filter(note => {
-  const content = note.compiledContent ? note.compiledContent() : '';
-  return content.includes('🔬');
+  try {
+    const content = typeof note.compiledContent === 'function' ? note.compiledContent() : '';
+    return typeof content === 'string' && content.includes('🔬');
+  } catch {
+    return false;
+  }
 });
 
 const armchairNotes = fieldNotes.filter(note => {
-  const content = note.compiledContent ? note.compiledContent() : '';
-  return content.includes('🪑');
+  try {
+    const content = typeof note.compiledContent === 'function' ? note.compiledContent() : '';
+    return typeof content === 'string' && content.includes('🪑');
+  } catch {
+    return false;
+  }
 });
 ---
 
-<BaseLayout title="Field Notes - Jin Hong Kuan">
-  <div class="field-notes-header">
+<BaseLayout title="Field Notes - Jin Kuan">
+  <PageTransition client:load>
+    <div class="field-notes-header">
     <h1>Field Notes</h1>
     <p class="header-description">
       Raw observations from the intersection where business decisions become engineering constraints. 
@@ -45,14 +55,15 @@ const armchairNotes = fieldNotes.filter(note => {
       
       <div class="notes-grid">
         {fieldworkNotes.map((note) => {
-          const title = note.frontmatter?.title || note.url.split('/').pop().replace(/-/g, ' ');
-          const url = note.url;
+          const title = note.frontmatter?.title || (note.url ? note.url.split('/').pop()?.replace(/-/g, ' ') : 'Untitled');
+          const url = note.url || '';
           
           // Extract preview from content
-          const content = note.compiledContent ? note.compiledContent() : '';
+          const rawContent = typeof note.compiledContent === 'function' ? note.compiledContent() : '';
+          const content = typeof rawContent === 'string' ? rawContent : '';
           const cleanContent = content.replace(/<[^>]*>?/gm, '');
-          const lines = cleanContent.split('\n').filter(line => line.trim());
-          const preview = lines.find(line => 
+          const lines = cleanContent.split('\n').filter((line: string) => line.trim());
+          const preview = lines.find((line: string) => 
             line.length > 50 && 
             !line.includes('🔬') && 
             !line.includes('Tags:') &&
@@ -80,14 +91,15 @@ const armchairNotes = fieldNotes.filter(note => {
       
       <div class="notes-grid">
         {armchairNotes.map((note) => {
-          const title = note.frontmatter?.title || note.url.split('/').pop().replace(/-/g, ' ');
-          const url = note.url;
+          const title = note.frontmatter?.title || (note.url ? note.url.split('/').pop()?.replace(/-/g, ' ') : 'Untitled');
+          const url = note.url || '';
           
           // Extract preview from content
-          const content = note.compiledContent ? note.compiledContent() : '';
+          const rawContent = typeof note.compiledContent === 'function' ? note.compiledContent() : '';
+          const content = typeof rawContent === 'string' ? rawContent : '';
           const cleanContent = content.replace(/<[^>]*>?/gm, '');
-          const lines = cleanContent.split('\n').filter(line => line.trim());
-          const preview = lines.find(line => 
+          const lines = cleanContent.split('\n').filter((line: string) => line.trim());
+          const preview = lines.find((line: string) => 
             line.length > 50 && 
             !line.includes('🪑') && 
             !line.includes('Tags:') &&
@@ -113,6 +125,7 @@ const armchairNotes = fieldNotes.filter(note => {
       Follow the links. See what emerges.</em>
     </p>
   </div>
+  </PageTransition>
 </BaseLayout>
 
 <style>

@@ -1,3 +1,7 @@
+---
+layout: ../../layouts/MarkdownLayout.astro
+---
+
 # About
 
 ## Does Technology Still Create Freer Societies?

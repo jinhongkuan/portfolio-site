@@ -1,3 +1,7 @@
+---
+layout: ../../layouts/MarkdownLayout.astro
+---
+
 # Threads
 
 These collections group observations that seem to point toward deeper, recurring features of the world we're trying to understand. They are not chapters in a book — they are clusters of insight in progress.

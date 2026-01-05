@@ -1,3 +1,7 @@
+---
+layout: ../../layouts/MarkdownLayout.astro
+---
+
 # Current Reading
 
 Books informing the ongoing inquiry, with connections to emerging field notes.

@@ -1,3 +1,7 @@
+---
+layout: ../../layouts/MarkdownLayout.astro
+---
+
 # How Growth Pressure Creates Technical Debt Through Deferred Decisions
 
 *2025-01-03* · Tags: `economic` `technological` `engineering` · 🔬 fieldwork

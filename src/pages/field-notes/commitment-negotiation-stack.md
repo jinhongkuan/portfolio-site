@@ -1,4 +1,5 @@
 ---
+layout: ../../layouts/MarkdownLayout.astro
 title: When Standups Become Scorekeeping
 relatedNotes:
   - title: When Metrics Become the Territory

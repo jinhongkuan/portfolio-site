@@ -1,3 +1,7 @@
+---
+layout: ../../layouts/MarkdownLayout.astro
+---
+
 # Where Accountability Dissolves in the Stack
 
 *2025-01-06* · Tags: `technological` `organizational` · 🪑 armchair

@@ -1,3 +1,7 @@
+---
+layout: ../../layouts/MarkdownLayout.astro
+---
+
 # Diagnostic Sprint Example
 
 ## What Actually Happens

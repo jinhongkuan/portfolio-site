@@ -1,3 +1,7 @@
+---
+layout: ../../layouts/MarkdownLayout.astro
+---
+
 # Agile vs Waterfall: Two Commitment Management Strategies
 
 *2026-01-04* · Tags: `organizational` `methodological` · 🪑 armchair

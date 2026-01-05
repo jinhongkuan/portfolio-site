@@ -1,3 +1,7 @@
+---
+layout: ../../layouts/MarkdownLayout.astro
+---
+
 # Practice
 
 Your team ships a feature. Three months later, you're rewriting it.

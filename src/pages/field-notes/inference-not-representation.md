@@ -1,3 +1,7 @@
+---
+layout: ../../layouts/MarkdownLayout.astro
+---
+
 # Inference Replaces Representation in Economic Coordination
 
 *2025-01-02* · Tags: `economic` `ontological` · 🪑 armchair

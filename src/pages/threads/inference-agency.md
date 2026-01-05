@@ -1,3 +1,7 @@
+---
+layout: ../../layouts/MarkdownLayout.astro
+---
+
 # Inference & Agency
 
 Three startups. Same pattern.

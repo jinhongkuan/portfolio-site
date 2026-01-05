@@ -1,3 +1,7 @@
+---
+layout: ../../layouts/MarkdownLayout.astro
+---
+
 # Techno-Economic Constraint
 
 Economics textbooks teach constraints as given: budgets, resources, technology. But watch what actually constrains startups:

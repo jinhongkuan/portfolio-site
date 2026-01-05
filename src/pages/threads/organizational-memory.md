@@ -1,3 +1,7 @@
+---
+layout: ../../layouts/MarkdownLayout.astro
+---
+
 # Organizational Memory
 
 A startup's codebase tells two stories. 

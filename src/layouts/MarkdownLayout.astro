@@ -3,7 +3,7 @@ import BaseLayout from './BaseLayout.astro';
 import SidebarLayout from './SidebarLayout.astro';
 
 const { frontmatter } = Astro.props;
-const title = frontmatter.title || 'Jin Hong Kuan';
+const title = frontmatter.title || 'Jin Kuan';
 const { relatedNotes = [], relatedThreads = [] } = frontmatter;
 
 // Use SidebarLayout if there are related items, otherwise use BaseLayout

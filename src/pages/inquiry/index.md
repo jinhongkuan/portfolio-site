@@ -1,3 +1,7 @@
+---
+layout: ../../layouts/MarkdownLayout.astro
+---
+
 # Inquiry
 
 Start anywhere. Each layer reveals something different about the same phenomena.

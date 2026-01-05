@@ -1,3 +1,7 @@
+---
+layout: ../layouts/MarkdownLayout.astro
+---
+
 # Colophon
 
 This site is an instrument for thinking in progress.

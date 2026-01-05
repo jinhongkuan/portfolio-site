@@ -1,3 +1,7 @@
+---
+layout: ../../layouts/MarkdownLayout.astro
+---
+
 # When Consumer Choice Constrains Economic Freedom
 
 *2025-01-04* · Tags: `economic` `technological` · 🔬 fieldwork

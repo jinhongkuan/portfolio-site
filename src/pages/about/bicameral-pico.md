@@ -1,3 +1,7 @@
+---
+layout: ../../layouts/MarkdownLayout.astro
+---
+
 # Bicameral Pico: Instrumentation for Organizational Ethnography
 
 ## What It Is
