@@ -4,53 +4,45 @@ layout: ../../layouts/MarkdownLayout.astro
 
 # About
 
-## Does Technology Still Create Freer Societies?
+> "A problem well put is half-solved."
+> — John Dewey
 
-This question haunts me as I navigate New York's tech scene, drawn here by Jefferson's vision of technology empowering independent producers. Yet what I witness daily is its inversion: platforms that promise freedom while engineering dependency.
+> "The limits of my language mean the limits of my world."
+> — Ludwig Wittgenstein
 
-Every startup I've worked with discovers the same thing: their models don't match their users. Not sometimes. Always.
+The problem-solving aspect of software engineering has always been the most exciting part for me. How can a series of function calls be pieced together to solve a business problem? To me, the reward is in the challenge itself: bridging two different worlds, that of the formulaic software codes and the open-ended realm of commerce.
 
-The interesting part isn't the failure — it's what happens next. Teams adapt, pivot, rewrite. They create new metrics that reshape behavior. They build systems that change what users can even want. The map stops describing the territory and starts reshaping it.
+Before I immigrated to this country, I was drawn to its noble founding story. Thomas Jefferson envisioned a virtuous republic where domestic technologies help empower the yeoman farmers in earning a living for themselves. As I immersed myself in the tech startup scene over the past four years, I saw how this vision matured seamlessly into the digital age, inspiring founders to experiment with innovative ideas in finance and healthcare that democratize access to essential services.
 
-## The Pragmatist Project
+Yet I also experienced first-hand the challenge that comes with applying clunky new technologies to solve varied human problems. Often, the technical overhead became an unforgiving filter on the type of problems being solved, as startups facing existential pressure to achieve scalable growth fast had to make engineering choices that inevitably restrict their future product roadmap.
 
-Traditional economics thinks *representationally* — models describe reality, metrics measure behavior, algorithms optimize outcomes. This view has led to modernity's characteristic ills: the tyranny of metrics (Muller), the unaccountability machine (Davies), the black swan blindness (Taleb). Now ML threatens to amplify these tendencies, optimizing away the very spaces where economic freedom exists.
+Making informed tradeoffs is the name of the game in the startup world, and founders rightly put revenue expansion as their top priority. Yet the role that successive engineering decisions play in shaping the overall product trajectory is often overlooked: one feature roadmap may be temporarily chosen over another with larger market potential due to lower initial lift, yet, the risk/reward calculus of making the switch becomes increasingly out of reach as internal infrastructure and services all crystallize around the wedge use case. Any change now would mean sacrificing valuable velocity.
 
-There's another way. The American pragmatist tradition — from Peirce and James through Dewey and Brandom — offers an *inferentialist* alternative. Rather than representing reality, our economic models and technical systems create inferential commitments that reshape possibility. As Brandom argues in "Making It Explicit," rationality emerges not from private utility calculations but from social practices of giving and asking for reasons. When platforms monopolize these practices, they exercise power more profound than traditional market dominance.
+In the web3 space, the difficulty of working with non-custodial wallets — a core value proposition of blockchain — resulted in the saturation of the space with "shallow" web3 consumer apps that leverage custodial wallets behind the scenes, no different from traditional financial infrastructure that it sought to replace. This has resulted in ecosystem-wide security vulnerabilities—with over $2.3 billion lost to hacks and exploits in 2024 alone, a 31.6% increase from the previous year[1]—despite heavy VC investment in secure web3 infrastructure solutions.
 
-Consider Uber's "be your own boss" rhetoric. This isn't describing driving-for-hire but redefining it through what I call "inferential monopoly." The platform doesn't just match riders with drivers — it monopolizes the normative vocabulary through which drivers express economic agency. Drivers cannot negotiate prices, communicate collectively, or make direct claims about service quality. Every meaningful economic decision remains with the platform. Meanwhile, taxi drivers who never chose this system find their feasibility space transformed by venture-capital-subsidized prices they cannot match. The individual "choice" to trade autonomy for platform access creates an autonomy cascade, forcing the same trade-off on everyone.
+This is market failure in action: the free market failing to coordinate in the rollout of a new technology, leaving market opportunities on the table. The macro-issue of market failure takes root in the micro-issue of engineering forecasting, since decisions made in high-pressure environments necessitate that cost/benefit be clearly stated. The solution thus requires that the two disparate domains of expertise come together upstream: the _business_ and timeline costs of _engineering_ decisions be clearly articulated at the time when they are made.
 
-When we apply inferentialist thinking to technology, we see it's fundamentally about controlling meaning-making. Credit scores exemplify this — they define "creditworthiness" through opaque algorithms while preventing any participation in that definition. As Schrepel and Pentland (2024) show, platforms engineer feasibility spaces that "preserve technical choice while systematically eliminating meaningful exit." Traditional economics can't capture how technical architecture doesn't just process transactions but defines what counts as one.
+With my private consultation work, I help startups stay on track with their product vision and prevent rework by assisting in technical design discussions and managing parallel development tracks. In Why Tech Debt is a Language Failure, I go over the contextual, and the potential as well as unique challenges that comes with leveraging AI to mediate this problem. More broadly however, the communication failure happens not just between business and engineers within a company, but also between the market and technology at large.
 
-## My Focus: Engineering Economic Agency
+[insert graph that contrasts good vs bad feedback flow, the build-up of "alignment debt" due to pressure to deliver]
 
-I'm driven by a simple question: How do we build systems that expand rather than constrain human agency?
+On the surface, the seems straightforward: whatever the market wants, it will signal through willingness to pay. Yet the truth is that web3 users never signed up for wallets with security vulnerabilities, nor Uber drivers for their earning potential to be controlled by a black-box algorithm. Instead, they signed up for "" and "being your own boss as an Uber driver". The use of embellished language is excusable, and at times even necessary as initial wedge into a market, yet to conflate the market demand for _what was promised_ with _what was delivered_ is dangerous, as the FTX incident which locked up enterprise funds would show.
 
-This pattern points to something deeper. Standard economic thinking treats rationality as calculating optimal responses to given constraints. But Brandom showed us that rationality is really about tracking commitments and their consequences. When a startup "pivots," they're not discovering pre-existing market truth — they're creating new inferential chains that others must follow.
+While FTX was a particularly egregious example of a company optimizing for growth over fidelity, the more pernicious is the breach of the _spirit_ of the contract between consenting parties. In Does Technology Create a Freer Society? I explore how the increasing of reliance on ill-defined metric and terminologies (e.g. "creditworthiness", "service rating") to justify the assortment users on platforms gives these platforms undue leverage over the lives of their users. In the words of Schrepel,
 
-I document these moments where philosophy, economics, and technology meet — call it techno-economic ethnography if you need a label.
+The Uber example is not unique, and the fact that the company controls the very language of the exchange signals the emergent of a new form of economic soft power that has normative implications where the definition of each term favors the platform, displacing previously ad-hoc mutual understanding between human beings. A "surge cost" may have implied a mutual agreement to shift the burden of extra gas between a taxi driver and his passenger during heavy traffic, open for negotiation, but becomes a license for opaque rent-seeking behaviors in the context of a platform. 1. its drivers gave explicit consent to these pricing mechanisms without the possibility of understanding the intricacies of the algorithm that they are now staking their income source on and 2. even if they did, they would have no meaningful recourse, as in the case of taxi drivers being forced to adopt platform terminology to remain competitive, as in the case of "ride-hailing service".
 
----
+The repressentationalist framework of economics, cannot easily account for the feasibility space engineering that combines black-box algorithms and vague language to manufacture consent. In my essays and field notes, I explore the potential of applying Robert Brandom's inferentialist framework of language, built upon both the analytic and pragmatist traditions to critique these asymmetric semantic arrangements.
 
-## What I Do
-
-I work at the intersection of inquiry and practice:
-
-**Inquiry**: Writing about how modern economic and technical systems no longer represent reality, but actively shape the space of possible actions — especially through software, metrics, and organizational decision-making.
-
-**Practice**: Helping early-stage teams clarify what decisions actually mean before they harden into systems. This upstream work reduces rework by surfacing implicit constraints and mapping feasibility early.
-
----
-
-## Current Projects
-
-**[Bicameral Pico](/portfolio-site/about/bicameral-pico)**: An open instrumentation layer that makes organizational decision dynamics observable, replayable, and learnable. It functions as a field instrument for ethnographic observation — capturing how decisions propagate through organizations and become embedded in technical systems.
-
----
+The structural and semantic alignment gap between platforms and their participants is widening. Whether it is the pressure to expand market share or the pressure to satisfy investors, the drive to penetrate every vertical of the economy means that this will soon be adding ever greater gulf between consumer choice and economic freedom. Through the intersection of engineering, economics and linguistics, a new critical vocabulary of the information age, I hope to recover Jefferson's vision of technology of empowering the little ones.
 
 ## Contact {#contact}
 
 Email: kuanjh123@gmail.com  
-Substack: [Pragmatism as Incarnational Economics](https://substack.com)  
+Substack: [Bicameral](https://substack.com)
 
 For upstream consulting inquiries, see [Practice](/portfolio-site/practice).
+
+## References
+
+[1] CertiK. "Hack3d: The Web3 Security Report 2024." CertiK, 2024. https://www.certik.com/resources/blog/hack3d-the-web3-security-report-2024

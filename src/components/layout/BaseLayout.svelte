@@ -51,13 +51,8 @@
     <div class="nav-links">
       <a href="/portfolio-site/" class:active={currentPath === '/portfolio-site/'}>Home</a>
       <a href="/portfolio-site/about" class:active={isActive('/about')}>About</a>
-      <a href="/portfolio-site/field-notes" class:active={isActive('/field-notes')}>Field Notes</a>
-      <a href="/portfolio-site/threads" class:active={isActive('/threads')}>Threads</a>
       <a href="/portfolio-site/practice" class:active={isActive('/practice')}>Practice</a>
-    </div>
-    <div class="nav-footer">
-      <a href="/portfolio-site/colophon">Colophon</a>
-      <a href="/portfolio-site/about#contact">Contact</a>
+      <a href="/portfolio-site/field-notes" class:active={isActive('/field-notes')}>Field Notes</a>
     </div>
   </nav>
   

@@ -7,6 +7,10 @@ import PageTransition from '../components/layout/PageTransition.svelte';
   <PageTransition client:load>
     <div class="homepage">
     <h1 class="site-title">JIN KUAN</h1>
+    
+    <div class="links">
+      <a href="/portfolio-site/Resume_Jin_Kuan.pdf" target="_blank" rel="noopener noreferrer">Resume</a>
+    </div>
 
     <div class="sections">
       <section class="section-item">
@@ -17,16 +21,16 @@ import PageTransition from '../components/layout/PageTransition.svelte';
       </section>
       
       <section class="section-item">
+        <h2>Projects</h2>
+        <p><strong>Pico</strong> — Open-source instrumentation software for product-engineering alignment. Integrated with Slack and GitHub to detect feature requirement gaps.</p>
+      </section>
+
+      <section class="section-item">
         <h2>Field Notes</h2>
         <p>Reflections from practical observations and readings, centered on a question often hurriedly brushed over - <a href="/portfolio-site/about">does technology actually create freer societies?</a></p>
       </section>
     </div>
     
-    <nav class="home-nav">
-      <a href="/portfolio-site/field-notes">Field Notes</a>
-      <span class="separator">·</span>
-      <a href="/portfolio-site/threads">Threads</a>
-    </nav>
     </div>
   </PageTransition>
 </BaseLayout>
@@ -47,12 +51,31 @@ import PageTransition from '../components/layout/PageTransition.svelte';
     font-size: 2.22rem;
     font-weight: 500;
     letter-spacing: 0.08em;
-    margin-bottom: 4rem;
+    margin-bottom: 1.5rem;
     line-height: 1;
   }
 
+  .links {
+    font-family: var(--font-sans);
+    font-size: 0.95rem;
+    margin-bottom: 2rem;
+  }
+
+  .links a {
+    color: var(--color-text);
+    text-decoration: none;
+    opacity: 0.7;
+    transition: opacity 0.2s ease;
+    margin: 0 0.5rem;
+  }
+
+  .links a:hover {
+    opacity: 1;
+    text-decoration: underline;
+  }
+
   .sections {
-    margin: 3rem 0;
+    margin: 0 0 3rem 0;
     text-align: left;
     width: 100%;
     max-width: 680px;
