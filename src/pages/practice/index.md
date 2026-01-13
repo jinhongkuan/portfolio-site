@@ -4,27 +4,31 @@ layout: ../../layouts/MarkdownLayout.astro
 
 # Practice
 
-## How I Work
+For startups building a technical moat, I get into the midst of product and engineering — facilitating design conversations and requirements that keep complex features on track.
 
-### Diagnostic Sprint (2–3 weeks)
-- Review existing discussions, docs, and code to surface implicit commitments, constraints, and likely rework points
-- Work directly with engineers and product owners to identify both feature development roadmap as well as engineering complexities
-- Ship code alongside the team to understand the engineering process firsthand
+Conventional consulting delivers a plan and walks away. Startups need someone in the weeds, a reliable support who understands the working assumptions, ships alongside the team, and stays close enough to catch drift before it compounds. My main objective as a support engineer is therefore to serve as a force multiplier for the team.
 
-### Decision Artifacts  
-I produce clear briefs and feasibility maps to increase overall visibility on the team, and surface potential timeline risks for the team to consider.
+---
 
-### Optional Ongoing Support
-I stay embedded upstream (10–20 hrs/week) to intercept ambiguity early and support execution via contractors if needed.
+## Engagements
 
-This work is upstream by design — it reduces work that would otherwise need to be done later.
+### Diagnostic Sprint (3 weeks)
+
+- Review your repo, infra, and roadmap.
+- Clarify requirements, sequence the work, get alignment.
+- You get: PRD, tech spec, milestone plan, and risk register — with buy-in from your team.
+- Clear vision on what to prioritize in the next 30 days.
+
+### Ongoing Support (monthly)
+
+I stay involved in key syncs, create concise docs to keep engineering tasks aligned with product priorities, and ensure engineering constraints are surfaced. When needed, I ship alongside the team, managing in-house contractors but always serving as contact point for the team.
 
 ---
 
 ## Background
 
-My experience spans CTO and senior engineering roles in regulated and high-stakes systems across fintech, healthcare, and trading infrastructure. This background informs my ability to spot patterns where decisions drift from their original intent.
+CTO and senior engineering roles across fintech, healthcare, and high-frequency trading. I've seen where decisions drift from intent — and how to catch it before it becomes a 20-ticket rewrite.
 
 ---
 
-[Discuss a diagnostic sprint →](/portfolio-site/about#contact)
+[Schedule an intro call →](https://calendly.com/jin-bicameral-ai/30min)

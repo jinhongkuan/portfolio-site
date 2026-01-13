@@ -1,36 +1,57 @@
 ---
-import BaseLayout from '../layouts/BaseLayout.astro';
-import PageTransition from '../components/layout/PageTransition.svelte';
+import BaseLayout from "../layouts/BaseLayout.astro";
+import PageTransition from "../components/layout/PageTransition.svelte";
 ---
 
 <BaseLayout>
   <PageTransition client:load>
     <div class="homepage">
-    <h1 class="site-title">JIN KUAN</h1>
-    
-    <div class="links">
-      <a href="/portfolio-site/Resume_Jin_Kuan.pdf" target="_blank" rel="noopener noreferrer">Resume</a>
-    </div>
+      <h1 class="site-title">JIN KUAN</h1>
 
-    <div class="sections">
-      <section class="section-item">
-        <h2>Practice</h2>
-        <p>Helping Seed-stage startups bridge business intent and complex engineering through flexible, hands-on and consultative engagement.</p>
-        <p>I've led engineering as a Seed-stage CTO and shipped production systems in healthtech and fintech, guiding feature design and roadmapping through pivots and productization.</p>
-        <p class="cta"><a href="/portfolio-site/practice">Schedule an intro call →</a></p>
-      </section>
-      
-      <section class="section-item">
-        <h2>Projects</h2>
-        <p><strong>Pico</strong> — Open-source instrumentation software for product-engineering alignment. Integrated with Slack and GitHub to detect feature requirement gaps.</p>
-      </section>
+      <div class="links">
+        <a
+          href="/portfolio-site/Resume_Jin_Kuan.pdf"
+          target="_blank"
+          rel="noopener noreferrer">Resume</a
+        >
+      </div>
 
-      <section class="section-item">
-        <h2>Field Notes</h2>
-        <p>Reflections from practical observations and readings, centered on a question often hurriedly brushed over - <a href="/portfolio-site/about">does technology actually create freer societies?</a></p>
-      </section>
-    </div>
-    
+      <div class="sections">
+        <section class="section-item">
+          <h2>Practice</h2>
+          <p>
+            Helping Seed-stage startups bridge business intent and complex
+            engineering through flexible, hands-on and consultative engagement.
+          </p>
+          <p>
+            I've led engineering as a Seed-stage CTO and shipped production
+            systems in healthtech and fintech, guiding feature design and
+            roadmapping through pivots and productization.
+          </p>
+          <p class="cta">
+            <a href="/portfolio-site/practice">Schedule an intro call →</a>
+          </p>
+        </section>
+
+        <section class="section-item">
+          <h2>Projects</h2>
+          <p>
+            <strong>Pico</strong> — Open-source instrumentation software for product-engineering
+            alignment. Integrated with Slack and GitHub to detect feature requirement
+            gaps.
+          </p>
+        </section>
+
+        <section class="section-item">
+          <h2>Field Notes</h2>
+          <p>
+            Reflections from practical observations and readings, centered on a
+            question often hurriedly brushed over - <a
+              href="/portfolio-site/about"
+              >does technology actually create freer societies?</a>
+          </p>
+        </section>
+      </div>
     </div>
   </PageTransition>
 </BaseLayout>
