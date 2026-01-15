@@ -37,7 +37,7 @@
   {/if}
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Source+Serif+Pro:ital,wght@0,400;0,600;1,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
   <style>
     :root {
       {$cssVariables}
@@ -50,8 +50,8 @@
     <div class="nav-logo">JK</div>
     <div class="nav-links">
       <a href="/portfolio-site/" class:active={currentPath === '/portfolio-site/'}>Home</a>
-      <a href="/portfolio-site/about" class:active={isActive('/about')}>About</a>
       <a href="/portfolio-site/practice" class:active={isActive('/practice')}>Practice</a>
+      <a href="/portfolio-site/projects" class:active={isActive('/projects')}>Projects</a>
       <a href="/portfolio-site/field-notes" class:active={isActive('/field-notes')}>Field Notes</a>
     </div>
   </nav>
@@ -67,14 +67,14 @@
   :global(html) {
     font-family: var(--font-serif);
     font-size: 18px;
-    line-height: 1.6;
+    line-height: 1.7;
     color: var(--color-text);
     background-color: var(--color-bg);
   }
   
   :global(body) {
     margin: 0;
-    padding: 2rem 1rem;
+    padding: 3rem 2rem;
     font-family: var(--font-serif);
     color: var(--color-text);
     background-color: var(--color-bg);
@@ -138,7 +138,6 @@
 
   .site-nav a:hover {
     opacity: 1;
-    background-color: var(--color-muted);
   }
 
   .site-nav a.active {
@@ -194,7 +193,7 @@
   }
 
   :global(h1) {
-    font-size: 2.2rem;
+    font-size: 2.5rem;
     margin-bottom: 2rem;
   }
 
@@ -208,7 +207,7 @@
   }
 
   :global(p) {
-    margin-bottom: 1.5rem;
+    margin-bottom: 2rem;
   }
 
   :global(a) {

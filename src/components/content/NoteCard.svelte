@@ -26,10 +26,8 @@
   }
 
   .note-card:hover {
-    background: var(--color-muted-dark);
-    border-color: var(--color-accent);
-    transform: translateY(-2px);
-    box-shadow: var(--shadow-md);
+    background: var(--color-muted);
+    border-color: var(--color-border);
   }
 
   .note-card h3 {

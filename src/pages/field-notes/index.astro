@@ -1,192 +1,217 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import PageTransition from '../../components/layout/PageTransition.svelte';
-import SectionHeader from '../../components/typography/SectionHeader.astro';
-import NoteCard from '../../components/content/NoteCard.astro';
 
 // Get all field notes
 const allNotes = await Astro.glob('./*.md');
-const fieldNotes = allNotes
-  .filter(note => note.file && !note.file.includes('index.md'))
-  .sort((a, b) => {
-    // Extract date from content or frontmatter
-    const dateA = a.frontmatter?.date || '2024-01-01';
-    const dateB = b.frontmatter?.date || '2024-01-01';
-    return dateB.localeCompare(dateA);
-  });
+const filteredNotes = allNotes.filter(note => note.file && !note.file.includes('index.md'));
 
-// Separate fieldwork and armchair notes
-const fieldworkNotes = fieldNotes.filter(note => {
-  try {
-    const content = typeof note.compiledContent === 'function' ? note.compiledContent() : '';
-    return typeof content === 'string' && content.includes('🔬');
-  } catch {
-    return false;
-  }
-});
+// Separate pinned and regular notes
+const pinnedNotes = filteredNotes.filter(note => note.frontmatter?.pinned);
 
-const armchairNotes = fieldNotes.filter(note => {
+// Helper to get compiled content safely as string
+const getContent = (note: any): string => {
   try {
-    const content = typeof note.compiledContent === 'function' ? note.compiledContent() : '';
-    return typeof content === 'string' && content.includes('🪑');
+    const raw = typeof note.compiledContent === 'function' ? note.compiledContent() : '';
+    return typeof raw === 'string' ? raw : String(raw || '');
   } catch {
-    return false;
+    return '';
   }
-});
+};
+
+// Helper to extract date from content if not in frontmatter
+const getDate = (note: any) => {
+  if (note.frontmatter?.date) return note.frontmatter.date;
+  const content = getContent(note);
+  const dateMatch = content.match(/\*(\d{4}-\d{2}-\d{2})\*/);
+  return dateMatch ? dateMatch[1] : '2024-01-01';
+};
+
+// Helper to get title
+const getTitle = (note: any) => {
+  if (note.frontmatter?.title) return note.frontmatter.title;
+  const content = getContent(note);
+  const titleMatch = content.match(/<h1[^>]*>([^<]+)<\/h1>/);
+  if (titleMatch) return titleMatch[1];
+  return note.url ? note.url.split('/').pop()?.replace(/-/g, ' ') : 'Untitled';
+};
+
+// Helper to determine category
+const getCategory = (note: any) => {
+  const content = getContent(note);
+  return content.includes('🔬') ? 'field' : 'armchair';
+};
+
+// Helper to extract tags
+const getTags = (note: any): string[] => {
+  const content = getContent(note);
+  const tagMatches = content.match(/`([^`]+)`/g);
+  if (!tagMatches) return [];
+  return tagMatches
+    .map(t => t.replace(/`/g, ''))
+    .filter(t => !['fieldwork', 'armchair'].includes(t) && !t.includes('Tags'));
+};
+
+// Process and categorize notes
+const regularNotes = filteredNotes
+  .filter(note => !note.frontmatter?.pinned)
+  .map(note => ({
+    title: getTitle(note),
+    url: note.url || '',
+    date: getDate(note),
+    category: getCategory(note),
+    tags: getTags(note)
+  }))
+  .sort((a, b) => b.date.localeCompare(a.date));
+
+const fieldNotes = regularNotes.filter(n => n.category === 'field');
+const armchairNotes = regularNotes.filter(n => n.category === 'armchair');
+
+// Format date for display
+const formatDate = (dateStr: string) => {
+  const date = new Date(dateStr);
+  return date.toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' });
+};
 ---
 
 <BaseLayout title="Field Notes - Jin Kuan">
   <PageTransition client:load>
-    <div class="field-notes-header">
     <h1>Field Notes</h1>
-    <p class="header-description">
-      Raw observations from the intersection where business decisions become engineering constraints. 
-      Each note captures a moment where reality refused to match the model.
-    </p>
-  </div>
 
-  <div class="notes-container">
-    <section class="notes-section">
-      <SectionHeader title="From the Field 🔬" count={`${fieldworkNotes.length} notes`} />
-      <p class="section-description">
-        Empirical observations from startup consulting and technical fieldwork. 
-        Where theory meets the messy reality of actual systems.
-      </p>
-      
-      <div class="notes-grid">
-        {fieldworkNotes.map((note) => {
-          const title = note.frontmatter?.title || (note.url ? note.url.split('/').pop()?.replace(/-/g, ' ') : 'Untitled');
+    {pinnedNotes.length > 0 && (
+      <div class="pinned-section">
+        {pinnedNotes.map((note) => {
+          const title = note.frontmatter?.title || 'Untitled';
           const url = note.url || '';
-          
-          // Extract preview from content
-          const rawContent = typeof note.compiledContent === 'function' ? note.compiledContent() : '';
-          const content = typeof rawContent === 'string' ? rawContent : '';
-          const cleanContent = content.replace(/<[^>]*>?/gm, '');
-          const lines = cleanContent.split('\n').filter((line: string) => line.trim());
-          const preview = lines.find((line: string) => 
-            line.length > 50 && 
-            !line.includes('🔬') && 
-            !line.includes('Tags:') &&
-            !line.includes('*')
-          ) || '';
-          
           return (
-            <NoteCard 
-              title={title}
-              url={url}
-              preview={preview.substring(0, 150) + '...'}
-              type="fieldwork"
-            />
+            <a href={url} class="pinned-note">
+              <span class="pinned-label">Professional Thesis</span>
+              <span class="pinned-title">{title}</span>
+              <span class="pinned-arrow">→</span>
+            </a>
           );
         })}
       </div>
-    </section>
+    )}
 
-    <section class="notes-section">
-      <SectionHeader title="From the Armchair 🪑" count={`${armchairNotes.length} notes`} />
-      <p class="section-description">
-        Theoretical reflections connecting fieldwork to broader patterns. 
-        Where philosophy meets practice.
-      </p>
-      
-      <div class="notes-grid">
-        {armchairNotes.map((note) => {
-          const title = note.frontmatter?.title || (note.url ? note.url.split('/').pop()?.replace(/-/g, ' ') : 'Untitled');
-          const url = note.url || '';
-          
-          // Extract preview from content
-          const rawContent = typeof note.compiledContent === 'function' ? note.compiledContent() : '';
-          const content = typeof rawContent === 'string' ? rawContent : '';
-          const cleanContent = content.replace(/<[^>]*>?/gm, '');
-          const lines = cleanContent.split('\n').filter((line: string) => line.trim());
-          const preview = lines.find((line: string) => 
-            line.length > 50 && 
-            !line.includes('🪑') && 
-            !line.includes('Tags:') &&
-            !line.includes('*')
-          ) || '';
-          
-          return (
-            <NoteCard 
-              title={title}
-              url={url}
-              preview={preview.substring(0, 150) + '...'}
-              type="armchair"
-            />
-          );
-        })}
-      </div>
-    </section>
-  </div>
+    {fieldNotes.length > 0 && (
+      <section class="category-section">
+        <h2>Field</h2>
+        {fieldNotes.map((note) => (
+          <a href={note.url} class="toc-entry">
+            <span class="toc-title">{note.title}</span>
+            <span class="toc-dots"></span>
+            <span class="toc-date">{formatDate(note.date)}</span>
+          </a>
+        ))}
+      </section>
+    )}
 
-  <div class="notes-footer">
-    <p>
-      <em>Each note stands alone but gains meaning through connections. 
-      Follow the links. See what emerges.</em>
-    </p>
-  </div>
+    {armchairNotes.length > 0 && (
+      <section class="category-section">
+        <h2>Armchair Speculations</h2>
+        {armchairNotes.map((note) => (
+          <a href={note.url} class="toc-entry">
+            <span class="toc-title">{note.title}</span>
+            <span class="toc-dots"></span>
+            <span class="toc-date">{formatDate(note.date)}</span>
+          </a>
+        ))}
+      </section>
+    )}
   </PageTransition>
 </BaseLayout>
 
 <style>
-  .field-notes-header {
-    margin-bottom: 4rem;
-    text-align: center;
-  }
-
-  .field-notes-header h1 {
-    font-size: 3rem;
-    margin-bottom: 1.5rem;
-  }
-
-  .header-description {
-    font-size: 1.2rem;
-    line-height: 1.7;
-    max-width: 600px;
-    margin: 0 auto;
-    opacity: 0.85;
-  }
-
-  .notes-container {
-    margin-bottom: 4rem;
-  }
-
-  .notes-section {
-    margin-bottom: 5rem;
-  }
-
-
-  .section-description {
-    font-style: italic;
-    opacity: 0.8;
+  h1 {
     margin-bottom: 2rem;
   }
 
-  .notes-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    gap: 2rem;
+  .pinned-section {
+    margin-bottom: 3rem;
   }
 
-
-  .notes-footer {
-    text-align: center;
-    padding-top: 3rem;
-    border-top: 1px solid var(--color-border);
+  .pinned-note {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1.5rem;
+    background: var(--color-muted);
+    border-radius: 4px;
+    text-decoration: none;
+    color: inherit;
+    transition: all 0.2s ease;
+    border: 1px solid transparent;
   }
 
-  .notes-footer p {
-    font-size: 1.1rem;
+  .pinned-note:hover {
+    border-color: var(--color-border);
+  }
+
+  .pinned-label {
+    font-family: var(--font-sans);
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--color-accent);
+    background: var(--color-bg);
+    padding: 0.25rem 0.5rem;
+    border-radius: 3px;
+  }
+
+  .pinned-title {
+    flex: 1;
+    font-family: var(--font-serif);
+    font-size: 1.2rem;
+    font-weight: 500;
+  }
+
+  .pinned-arrow {
+    font-family: var(--font-sans);
+    color: var(--color-accent);
+  }
+
+  .category-section {
+    margin-bottom: 2.5rem;
+  }
+
+  .category-section h2 {
+    font-family: var(--font-serif);
+    font-size: 1rem;
+    font-weight: 400;
+    font-style: italic;
+    margin-bottom: 1rem;
+  }
+
+  .toc-entry {
+    display: flex;
+    align-items: baseline;
+    text-decoration: none;
+    color: inherit;
+    margin-bottom: 0.5rem;
+  }
+
+  .toc-entry:hover .toc-title {
+    color: var(--color-accent);
+  }
+
+  .toc-title {
+    font-family: var(--font-serif);
+    white-space: nowrap;
+  }
+
+  .toc-dots {
+    flex: 1;
+    border-bottom: 1px dotted var(--color-border);
+    margin: 0 0.5rem;
+    min-width: 2rem;
+  }
+
+  .toc-date {
+    font-family: var(--font-serif);
+    font-size: 0.9rem;
+    white-space: nowrap;
     opacity: 0.7;
-  }
-
-  @media (max-width: 768px) {
-    .field-notes-header h1 {
-      font-size: 2.2rem;
-    }
-
-    .notes-grid {
-      grid-template-columns: 1fr;
-    }
   }
 </style>

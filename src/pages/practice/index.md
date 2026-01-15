@@ -4,31 +4,22 @@ layout: ../../layouts/MarkdownLayout.astro
 
 # Practice
 
-For startups building a technical moat, I get into the midst of product and engineering — facilitating design conversations and requirements that keep complex features on track.
+Consultants advise from a distance. Staff engineers optimize for robustness over speed.
 
-Conventional consulting delivers a plan and walks away. Startups need someone in the weeds, a reliable support who understands the working assumptions, ships alongside the team, and stays close enough to catch drift before it compounds. My main objective as a support engineer is therefore to serve as a force multiplier for the team.
-
----
-
-## Engagements
+I work directly with your team, shipping code and facilitating design conversations to catch drift between architectural decisions and product goals    before it compounds.                                                            
 
 ### Diagnostic Sprint (3 weeks)
 
 - Review your repo, infra, and roadmap.
-- Clarify requirements, sequence the work, get alignment.
-- You get: PRD, tech spec, milestone plan, and risk register — with buy-in from your team.
-- Clear vision on what to prioritize in the next 30 days.
+- Ship alongside the team (familiarity with Rust/Typescript/Java)
+- You get: PRD, tech specs with buy-in from your team.
+- Clear outline on engineering tasks to prioritize in the next 30-60 days.
 
-### Ongoing Support (monthly)
+[Schedule a discovery call →](https://calendly.com/jin-bicameral-ai/30min)
 
-I stay involved in key syncs, create concise docs to keep engineering tasks aligned with product priorities, and ensure engineering constraints are surfaced. When needed, I ship alongside the team, managing in-house contractors but always serving as contact point for the team.
 
----
+### Ongoing Support 
 
-## Background
+10-20hr/wk contract engagement, keeping engineering tasks aligned with product priorities and ensuring engineering constraints are accounted for. I contribute directly to the codebase when needed, managing in-house contractors but always serving as contact point for the team.
 
-CTO and senior engineering roles across fintech, healthcare, and high-frequency trading. I've seen where decisions drift from intent — and how to catch it before it becomes a 20-ticket rewrite.
 
----
-
-[Schedule an intro call →](https://calendly.com/jin-bicameral-ai/30min)

@@ -4,14 +4,13 @@ export const theme = {
   colors: {
     bg: '#FAF9F5',
     text: '#1A1A1A',
-    accent: '#7A7A52',
+    accent: '#8B8B70',
     border: '#E7E6E2',
     muted: '#F5F4F0',
-    mutedDark: '#EFEDE8',
   },
   
   fonts: {
-    serif: "'EB Garamond', Georgia, serif",
+    serif: "'Source Serif Pro', Georgia, serif",
     sans: "'Inter', -apple-system, sans-serif",
   },
   
