@@ -23,7 +23,9 @@ It exists between [product and engineering teams](/portfolio-site/field-notes/wh
 
 It exists between [the market and the tech sector](/portfolio-site/field-notes/does-technology-create-freer-society) at large, as Uber drivers who sign up "to be their own boss" find their livelihood determined by a black-box algorithm.
 
-I speculate that these two seemingly distinct alignment issues, the micro-level disconnect between the product that was promised versus the product that _gets built_, and the macro-level coordination failure between the market pain points that were communicated and the ones that _get solved_, are in fact deeply intertwined: the lack of visibility between marketing and technical expertise within startups results in premature commitments to feature roadmaps, frequent refactors, suboptimal hires and ultimately product pivots. 
+I speculate that these two seemingly distinct alignment issues, the micro-level disconnect between the product that was promised versus the product that _gets built_, and the macro-level coordination failure between the market pain points that were communicated and the ones that _get solved_, are in fact deeply intertwined. 
+
+The lack of visibility between marketing and technical expertise within startups results in premature commitments to feature roadmaps, frequent refactors, suboptimal hires and ultimately product pivots. 
 
 On an ecosystem level, this constrains the range of problems being solved. For instance, 61% of B2B SaaS spending comes from large enterprises, even though SMBs represent 99.9% of all US businesses, highlighting the propensity of startups to focus on relatively structured problems rather than tackling ill-defined industry problems that require product and engineering working in close quarters.
 

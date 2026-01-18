@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lacuna: Semantic Gap Trading Thesis</title>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        @page {
+            margin: 1in;
+            size: letter;
+        }
+        body {
+            font-family: 'Georgia', 'Times New Roman', serif;
+            line-height: 1.6;
+            max-width: 8.5in;
+            margin: 0 auto;
+            padding: 0.5in;
+            color: #1a1a1a;
+            font-size: 11pt;
+        }
+        h1 {
+            font-size: 24pt;
+            border-bottom: 2px solid #333;
+            padding-bottom: 10px;
+            margin-top: 0;
+        }
+        h2 {
+            font-size: 14pt;
+            color: #333;
+            margin-top: 24pt;
+            border-bottom: 1px solid #ccc;
+            padding-bottom: 5px;
+        }
+        h3 {
+            font-size: 12pt;
+            color: #444;
+            margin-top: 16pt;
+        }
+        .meta {
+            color: #666;
+            font-size: 10pt;
+            margin-bottom: 20pt;
+        }
+        .executive-summary {
+            background: #f5f5f5;
+            padding: 15px 20px;
+            border-left: 4px solid #333;
+            margin: 20px 0;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 15px 0;
+            font-size: 10pt;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px 12px;
+            text-align: left;
+        }
+        th {
+            background: #f0f0f0;
+            font-weight: bold;
+        }
+        tr:nth-child(even) {
+            background: #fafafa;
+        }
+        code {
+            background: #f4f4f4;
+            padding: 2px 6px;
+            border-radius: 3px;
+            font-family: 'Courier New', monospace;
+            font-size: 10pt;
+        }
+        .formula {
+            text-align: center;
+            margin: 20px 0;
+            font-size: 11pt;
+        }
+        hr {
+            border: none;
+            border-top: 1px solid #ccc;
+            margin: 30px 0;
+        }
+        .case-study {
+            background: #fff8e1;
+            padding: 15px 20px;
+            border: 1px solid #ffcc80;
+            border-radius: 5px;
+            margin: 20px 0;
+        }
+        .risk-factors {
+            background: #ffebee;
+            padding: 15px 20px;
+            border-left: 4px solid #ef5350;
+            margin: 20px 0;
+        }
+        .disclaimer {
+            font-size: 9pt;
+            color: #666;
+            font-style: italic;
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid #ddd;
+        }
+        @media print {
+            body { padding: 0; }
+            .page-break { page-break-before: always; }
+        }
+    </style>
+</head>
+<body>
+
+<h1>Lacuna: Semantic Gap Trading Thesis</h1>
+
+<div class="meta">
+    <strong>Author:</strong> Jin Hong Kuan<br>
+    <strong>Date:</strong> January 2026<br>
+    <strong>Version:</strong> 1.0
+</div>
+
+<hr>
+
+<h2>Executive Summary</h2>
+
+<div class="executive-summary">
+    Lacuna exploits a systematic mispricing pattern in public equities: companies that control the vocabulary used to describe their value proposition create "semantic gaps" between marketing promises and operational reality. These gaps are predictive of future stock underperformance.
+</div>
+
+<h2>Core Intuition</h2>
+
+<h3>Theoretical Foundation</h3>
+
+<p>This thesis builds on Robert Shiller's <em>Narrative Economics</em> (2019), which demonstrates how viral narratives drive economic fluctuations. Shiller shows that stories—not just data—move markets. Lacuna operationalizes this insight: we measure the <em>gap</em> between the narratives companies tell and the operational reality revealed in regulatory filings.</p>
+
+<p>The framework also extends <a href="https://jinhongkuan.github.io/portfolio-site/field-notes/on-tech-debt-and-market-failure/">prior work on semantic gaps in tech startups</a>, which identified how the loss of resolution between "core functionalities" and "value proposition" creates systematic misalignment—both within organizations (product vs. engineering) and at the market level (promises vs. delivery).</p>
+
+<h3>The Semantic Gap</h3>
+
+<p>When a company claims "partnership with NASA" but the contract is worth $26,000, or promises "quantum advantage" without peer-reviewed validation, they exercise what we term <strong>inferential monopoly</strong>—controlling how stakeholders interpret key terms.</p>
+
+<p>This creates measurable divergence between:</p>
+<ul>
+    <li><strong>Promise Graph:</strong> Claims extracted from investor presentations, press releases, marketing</li>
+    <li><strong>Capability Graph:</strong> Facts from SEC filings, technical documentation, financial statements</li>
+</ul>
+
+<h3>Why It Predicts Returns</h3>
+
+<ol>
+    <li><strong>Information asymmetry:</strong> Retail investors rely on marketing; institutional investors dig into filings</li>
+    <li><strong>Correction catalyst:</strong> Short reports, earnings misses, and lawsuits expose gaps</li>
+    <li><strong>Mean reversion:</strong> Valuation eventually reflects operational reality</li>
+</ol>
+
+<h2>Calibration Method</h2>
+
+<h3>Model Specification</h3>
+
+<p>We regress 90-day forward returns against gap scores and valuation metrics:</p>
+
+<div class="formula">
+    \[ R_{90d} = \alpha + \beta_1 \cdot \text{GapScore} + \beta_2 \cdot \log(\text{P/S}) + \sum_s \beta_s \cdot \text{Sector}_s + \varepsilon \]
+</div>
+
+<p>Where:</p>
+<ul>
+    <li>\( R_{90d} \) = 90-day stock return (%)</li>
+    <li>\( \text{GapScore} \) = Semantic gap score (0-10 scale)</li>
+    <li>\( \text{P/S} \) = Price-to-Sales ratio</li>
+    <li>\( \text{Sector}_s \) = Sector dummy variables</li>
+</ul>
+
+<h3>Coefficient Interpretation</h3>
+
+<table>
+    <tr>
+        <th>Coefficient</th>
+        <th>Expected Sign</th>
+        <th>Interpretation</th>
+    </tr>
+    <tr>
+        <td>\( \beta_1 \) (gap)</td>
+        <td>Negative</td>
+        <td>Each +1 gap point → X% lower return</td>
+    </tr>
+    <tr>
+        <td>\( \beta_2 \) (P/S)</td>
+        <td>Negative</td>
+        <td>Higher valuation → lower forward returns</td>
+    </tr>
+</table>
+
+<h3>Derived Trading Parameters</h3>
+
+<p>From the learned \( \beta_1 \):</p>
+
+<div class="formula">
+    \[ \text{GapDiscount}_{\max} = \frac{|\beta_1| \times 10}{100} \]
+</div>
+
+<p><strong>Example:</strong> If \( \beta_1 = -2.87 \), then a gap score of 10 implies 28.7% expected underperformance, yielding \( \text{GapDiscount}_{\max} = 0.287 \).</p>
+
+<h3>Signal Generation</h3>
+
+<div class="formula">
+    \[ \text{FairValue} = \frac{\text{Price}}{\text{P/S}} \times \text{SectorMedianP/S} \times (1 - \text{GapDiscount}) \]
+</div>
+
+<table>
+    <tr>
+        <th>Condition</th>
+        <th>Signal</th>
+    </tr>
+    <tr>
+        <td>\( \text{Price} > 1.15 \times \text{FairValue} \)</td>
+        <td>OVERVALUED</td>
+    </tr>
+    <tr>
+        <td>\( \text{Price} < 0.85 \times \text{FairValue} \)</td>
+        <td>UNDERVALUED</td>
+    </tr>
+    <tr>
+        <td>Otherwise</td>
+        <td>FAIR</td>
+    </tr>
+</table>
+
+<div class="page-break"></div>
+
+<h2>Data Sources</h2>
+
+<table>
+    <tr>
+        <th>Source</th>
+        <th>Purpose</th>
+    </tr>
+    <tr>
+        <td>SEC EDGAR</td>
+        <td>10-K, 10-Q, S-1 filings (capability graph)</td>
+    </tr>
+    <tr>
+        <td>Company IR</td>
+        <td>Press releases, investor decks (promise graph)</td>
+    </tr>
+    <tr>
+        <td>yfinance</td>
+        <td>Stock prices, P/S ratios, sector classification</td>
+    </tr>
+    <tr>
+        <td>LLM (GPT-4)</td>
+        <td>Knowledge graph extraction via SPO triplets</td>
+    </tr>
+</table>
+
+<h2>Validation: QUBT Case Study</h2>
+
+<div class="case-study">
+    <strong>Quantum Computing Inc. (QUBT)</strong> — analyzed January 2026
+
+    <table>
+        <tr>
+            <th>Metric</th>
+            <th>Finding</th>
+        </tr>
+        <tr>
+            <td>Gap Score</td>
+            <td>9.2 / 10</td>
+        </tr>
+        <tr>
+            <td>Signal</td>
+            <td>EXTREME OVERVALUATION</td>
+        </tr>
+        <tr>
+            <td>Key Gaps</td>
+            <td>"NASA partnership" = $26K contract; "quantum advantage" unverified</td>
+        </tr>
+    </table>
+
+    <p><strong>Subsequent Events (within 90 days):</strong></p>
+    <ul>
+        <li>Stock declined 80% from December peak</li>
+        <li>Multiple short seller reports published</li>
+        <li>Securities lawsuits filed</li>
+    </ul>
+
+    <p><strong>Outcome:</strong> Correctly predicted directional move and failure mode.</p>
+</div>
+
+<h2>Risk Factors</h2>
+
+<div class="risk-factors">
+    <ol>
+        <li><strong>Model risk:</strong> Regression coefficients may not be stable across market regimes</li>
+        <li><strong>Data quality:</strong> Gap scores depend on LLM extraction accuracy</li>
+        <li><strong>Timing risk:</strong> Gaps can persist longer than expected before correction</li>
+        <li><strong>Liquidity risk:</strong> Many high-gap companies are small-cap with wide spreads</li>
+    </ol>
+</div>
+
+<h2>Implementation Notes</h2>
+
+<ul>
+    <li><strong>Holding period:</strong> 1-4 quarters (allows gap to materialize)</li>
+    <li><strong>Position sizing:</strong> Inverse to gap score confidence interval width</li>
+    <li><strong>Universe:</strong> Focus on small/mid-cap with P/S > 10 and limited analyst coverage</li>
+    <li><strong>Rebalancing:</strong> Re-score quarterly as new filings become available</li>
+</ul>
+
+<h2>Statistical Requirements</h2>
+
+<p>Before deploying:</p>
+<ul>
+    <li>Gap coefficient (\( \beta_1 \)) must be significant at \( p < 0.05 \)</li>
+    <li>Model \( R^2 > 0.10 \) (explains meaningful variance)</li>
+    <li>Directional accuracy on validation set \( > 55\% \)</li>
+    <li>Sharpe ratio on backtest \( > 0.5 \)</li>
+</ul>
+
+<h2>Appendix: Gap Score Components</h2>
+
+<p>The LLM-derived gap score aggregates divergence across key terms:</p>
+
+<table>
+    <tr>
+        <th>Gap Type</th>
+        <th>Description</th>
+        <th>Weight</th>
+    </tr>
+    <tr>
+        <td>Unverified Claim</td>
+        <td>Promise without evidence</td>
+        <td>High</td>
+    </tr>
+    <tr>
+        <td>Inferential Monopoly</td>
+        <td>Controlling term definitions</td>
+        <td>High</td>
+    </tr>
+    <tr>
+        <td>Partnership Exaggeration</td>
+        <td>Overstating business relationships</td>
+        <td>Medium</td>
+    </tr>
+    <tr>
+        <td>Revenue Disconnect</td>
+        <td>Claimed value vs. actual revenue</td>
+        <td>High</td>
+    </tr>
+    <tr>
+        <td>Definitional Control</td>
+        <td>Redefining industry terms</td>
+        <td>Medium</td>
+    </tr>
+</table>
+
+<h2>References</h2>
+
+<ol>
+    <li>Shiller, R. J. (2019). <em>Narrative Economics: How Stories Go Viral and Drive Major Economic Events</em>. Princeton University Press.</li>
+    <li>Kuan, J. H. (2026). "On Tech Debt and Market Failure." <a href="https://jinhongkuan.github.io/portfolio-site/field-notes/on-tech-debt-and-market-failure/">https://jinhongkuan.github.io/portfolio-site/field-notes/on-tech-debt-and-market-failure/</a></li>
+    <li>McDermott, R. (2024). "AI Knowledge Graph." <a href="https://github.com/robert-mcdermott/ai-knowledge-graph">https://github.com/robert-mcdermott/ai-knowledge-graph</a></li>
+    <li>U.S. Securities and Exchange Commission. EDGAR Database. <a href="https://www.sec.gov/edgar">https://www.sec.gov/edgar</a></li>
+</ol>
+
+<div class="disclaimer">
+    This document outlines a research thesis. Past performance does not guarantee future results. Not investment advice.
+</div>
+
+</body>
+</html>
