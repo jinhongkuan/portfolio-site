@@ -50,7 +50,6 @@
     <div class="nav-logo">JK</div>
     <div class="nav-links">
       <a href="/portfolio-site/" class:active={currentPath === '/portfolio-site/'}>Home</a>
-      <a href="/portfolio-site/practice" class:active={isActive('/practice')}>Practice</a>
       <a href="/portfolio-site/projects" class:active={isActive('/projects')}>Projects</a>
       <a href="/portfolio-site/field-notes" class:active={isActive('/field-notes')}>Field Notes</a>
     </div>
