@@ -6,7 +6,7 @@ date: 2025-01-04
 
 # American Pragmatism and Incarnational Economics
 
-Tags: `philosophy` `economics` `pragmatism` · 🔭 fieldwork
+Tags: `philosophy` `economics` `pragmatism` · 🪑 armchair
 
 There's something odd going on between American pragmatism and incarnational theology that most people walk right past. Both reject the idea that truth is something you watch from the stands. Both say reality is participatory. You're in it, not above it.
 
