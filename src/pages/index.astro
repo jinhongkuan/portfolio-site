@@ -28,6 +28,30 @@ import PageTransition from "../components/layout/PageTransition.svelte";
 
       <div class="sections">
         <section class="section-item">
+          <h2>Selected Work</h2>
+          <ul class="work">
+            <li><strong>Founder</strong>, Bicameral AI <span>2026</span></li>
+            <li><strong>Senior Backend Engineer</strong>, Azura <span>2025–2026</span></li>
+            <li><strong>Senior Software Engineer</strong>, Yuzu Health <span>2024–2025</span></li>
+            <li><strong>Co-founder / CTO</strong>, Circuit <span>2022–2024</span></li>
+            <li><strong>Software Engineer</strong>, Jump Trading <span>2022</span></li>
+          </ul>
+        </section>
+
+        <section class="section-item">
+          <h2>Work in Progress</h2>
+          <p><a href="/portfolio-site/wip/collapse-barrier">A Collapse Barrier →</a><br />Surfacing the plan details a coding agent commits to without support from the issue or the code it read.</p>
+        </section>
+
+        <section class="section-item">
+          <h2>Writing</h2>
+          <ul class="work">
+            <li>Liquidity Provision Payoff on Automated Market Makers <span>arXiv, 2022</span></li>
+            <li>Emergence and Stability of Self-Evolved Cooperative Strategies using Stochastic Machine <span>IEEE SSCI, 2020</span></li>
+          </ul>
+        </section>
+
+        <section class="section-item">
           <h2><a href="/portfolio-site/projects">Projects →</a></h2>
           <p>Open-source tools for product-engineering alignment.</p>
         </section>
@@ -115,6 +139,21 @@ import PageTransition from "../components/layout/PageTransition.svelte";
     font-size: 1rem;
     line-height: 1.6;
     margin: 0 0 0.75rem 0;
+  }
+
+  .work {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    font-size: 1rem;
+    line-height: 1.9;
+  }
+
+  .work span {
+    font-family: var(--font-sans);
+    font-size: 0.85rem;
+    opacity: 0.55;
+    margin-left: 0.4rem;
   }
 
   .section-item p:last-child {
